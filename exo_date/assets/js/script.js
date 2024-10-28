@@ -40,24 +40,24 @@
 // Exercice 1 
 
 
-function calculateAge (birthDate) {
-    const now = new Date();
-    const birth = new Date(birthDate);
-    let age = now.getFullYear() - birth.getFullYear();
-    let month = now.getMonth() - birth.getMonth();
+// function calculateAge (birthDate) {
+//     const now = new Date();
+//     const birth = new Date(birthDate);
+//     let age = now.getFullYear() - birth.getFullYear();
+//     let month = now.getMonth() - birth.getMonth();
 
-    if (month < 0) {
-        age--;
-    } else if (month === 0 && now.getDate() < birth.getDate()) {
-        age--;
-    }
-    return age;
-}
+//     if (month < 0) {
+//         age--;
+//     } else if (month === 0 && now.getDate() < birth.getDate()) {
+//         age--;
+//     }
+//     return age;
+// }
 
 
 
-const birthDate = '1997-02-06'
-console.log(calculateAge(birthDate));
+// const birthDate = '1997-02-06'
+// console.log(calculateAge(birthDate));
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -67,29 +67,29 @@ console.log(calculateAge(birthDate));
 // Ne marche pas car prend n'importe quel format de date. Je penser transformer en chaine de caractères et décomposer year/month/day pour vérifier 
 // Je passe au suivant et je reviens plus tard sur cet exercice
 
-function isValidDate(dateString) {
-    const parts = dateString.split("-");
-    const year = parseInt(parts[0], 10);
-    const month = parseInt(parts[1], 10);
-    const day = parseInt(parts[2], 10);
+// function isValidDate(dateString) {
+//     const parts = dateString.split("-");
+//     const year = parseInt(parts[0], 10);
+//     const month = parseInt(parts[1], 10);
+//     const day = parseInt(parts[2], 10);
 
-    if (month < 1 || month > 12 || day < 1 || day > 31) {
-        return false
-    }
-    if (month === 4 | month === 6 | month === 9 || month === 11 && day === 31) {
-        return false
-    }
-    if (month ===2) {
-        //leapYear: multiple de 4 ET multiple de 100 ou 400 
-        const leapYear = (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0));
-        if (day > 29 || (day === 29 && !leapYear)) {
-            return false
-        }
-    }
-    return true
-}
+//     if (month < 1 || month > 12 || day < 1 || day > 31) {
+//         return false
+//     }
+//     if (month === 4 | month === 6 | month === 9 || month === 11 && day === 31) {
+//         return false
+//     }
+//     if (month ===2) {
+//         //leapYear: multiple de 4 ET multiple de 100 ou 400 
+//         const leapYear = (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0));
+//         if (day > 29 || (day === 29 && !leapYear)) {
+//             return false
+//         }
+//     }
+//     return true
+// }
 
-console.log(isValidDate('2023-02-30'));
+// console.log(isValidDate('2023-02-29'));
 
 
 
